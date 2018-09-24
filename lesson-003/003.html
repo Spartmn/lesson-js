@@ -25,17 +25,52 @@
         return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
     var t1 = prompt("Вседите слово", "");
-    alert(ucFirst(t1));}*/
+    alert(ucFirst(t1));}
 
-    function checkSpam(str) {
+    function checkSpam(str) { //Фунция поиска Спама
         var strLower = str.toLowerCase();
-        if ((~strLower.indexOf("viagra")) && ((~strLower.indexOf("xxx")))) {
+        if (~strLower.indexOf("viagra")) { // С помощью if и else
+            alert("Спам");
+        }
+        else if (~strLower.indexOf("xxx")) {
             alert("Спам");
         }
         else alert("не спам");
+        
+        if ((~strLower.indexOf("viagra")) || (~strLower.indexOf("xxx"))){ //С помощью if и ||
+            alert("Спам");
+        }
+        else alert("Не спам")
+                
+        return ((~strLower.indexOf("viagra")) || (~strLower.indexOf("xxx"))) ? alert("Спам"): alert("Не спам"); // Укароченный вариант
     }
 
     checkSpam(prompt("Введите текст",""));
+    
+    function truncate(str, maxlenght) { //Функция обреза строки
+        if (str.length > maxlenght) {
+            return str.slice(0, maxlenght - 3) + "...";
+        }
+            return str;
+    }
+    alert(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+    alert(truncate("Всем привет!", 20));
+
+
+    function extractCurrencyValue(str) { //Как вариант если не надо искать все числа по страке
+      return +str.slice(1);
+    }*/
+    function extractCurrencyValue(str) {
+        var newStr = "";
+        for (i=0; i <= str.length; i++) {
+            if (!isNaN(str.charAt(i))) {
+                newStr += str.charAt(i);
+            }
+        }
+        return newStr;
+    }
+
+    alert(extractCurrencyValue("$120"));
 </script>
 </body>
 </html>
