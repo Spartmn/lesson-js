@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Числа</title>
+</head>
+<body>
+<script>
+    /*var number1 = +prompt("Введите первое число", ""),
+        number2 = +prompt("Введите второе число", "");
+    alert(number1 + number2);
+
+    alert( (0.1 + 0.2).toFixed(2) + '$' );
+
+    function getDecimal(num){
+        var x = Math.round((num - parseInt(num))*1000)/1000;
+        return x;
+    }
+    var a = +prompt("Введите дробное число", "");
+    alert(getDecimal(a));
+
+    //Формула Бине
+    function fibBinet(n) {
+        var phi = (1 + Math.sqrt(5)) / 2;
+        // используем Math.round для округления до ближайшего целого
+        return Math.round(Math.pow(phi, n) / Math.sqrt(5));
+    }
+
+    function fib(n) {
+        var a = 1,
+            b = 0,
+            x;
+        for (i = 0; i < n; i++) {
+            x = a + b;
+            a = b
+            b = x;
+        }
+        return b;
+    }
+
+    alert( fibBinet(2) ); // 1, равно fib(2)
+    alert( fibBinet(8) ); // 21, равно fib(8)
+    alert( fibBinet(77) ); // 5527939700884755
+    alert( fib(77) ); // 5527939700884757, не совпадает!
+
+    function RandomMax(max) { //Случайное из интервала (0, max)
+        return (max != 0) ? Math.random()*max: 0;
+    }
+    var a = +prompt("Введите максимальное число для случайного числа", "");
+    alert (RandomMax(a));
+
+    function randomMinMax(min, max) { //Случайное из интервала (min, max)
+        var r = min + Math.random()*(max - min);
+        return r;
+    }
+
+    var a = +prompt("Введите min", ""),
+        b = +prompt("Введите max","");
+
+    alert (randomMinMax(a, b));
+    
+    function randomInteger(min, max) {
+        return min + Math.round(Math.random() * (max - min));
+    }
+
+    var a = +prompt("Введите min", ""),
+        b = +prompt("Введите max","");
+
+    alert (randomInteger(a, b));
+
+    function randomInteger(min, max) {
+        var rand = min - 0.5 + Math.random() * (max - min + 1)
+        rand = Math.round(rand);
+        return rand;
+    }
+
+    alert( randomInteger(5, 10) );*/
+
+    //или
+
+    function randomInteger(min, max) {
+        var rand = min + Math.random() * (max + 1 - min);
+        rand = Math.floor(rand);
+        return rand;
+    }
+
+    alert( randomInteger(5, 10) );
+</script>
+</body>
+</html>

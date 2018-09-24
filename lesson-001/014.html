@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Преобразование типов для примитивов</title>
+</head>
+<body>
+<pre>
+    В JavaScript есть три преобразования:
+
+Строковое: String(value) – в строковом контексте или при сложении со строкой. Работает очевидным образом.
+Численное: Number(value) – в численном контексте, включая унарный плюс +value. Происходит при сравнении разных типов, кроме строгого равенства.
+Логическое: Boolean(value) – в логическом контексте, можно также сделать двойным НЕ: !!value.
+Точные таблицы преобразований даны выше в этой главе.
+
+Особым случаем является проверка равенства с null и undefined. Они равны друг другу, но не равны чему бы то ни было ещё, этот случай прописан особо в спецификации.
+</pre>
+<pre>
+<script>
+    document.writeln("" + 1 + 0);
+    document.writeln("" - 1 + 0);
+    document.writeln(true + false);
+    document.writeln(6 / "3");
+    document.writeln("2" * "3");
+    document.writeln(4 + 5 + "px");
+    document.writeln("$" + 4 + 5);
+    document.writeln("4" - 2);
+    document.writeln("4px" - 2);
+    document.writeln(7 / 0);
+    document.writeln("  -9\n" + 5);
+    document.writeln("  -9\n" - 5);
+    document.writeln(5 && 2);
+    document.writeln(2 && 5);
+    document.writeln(5 || 0);
+    document.writeln(0 || 5);
+    document.writeln(null + 1);
+    document.writeln(undefined + 1);
+    document.writeln(null == "\n0\n");
+    document.writeln(+null == +"\n0\n");
+</script>
+</pre>
+</body>
+</html>
