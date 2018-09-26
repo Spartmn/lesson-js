@@ -5,6 +5,97 @@
     <title>Объекты: перебор свойств</title>
 </head>
 <body>
+<pre>
+    Цикл по ключам: for (key in obj).
+    Порядок перебора соответствует порядку объявления для нечисловых ключей, а числовые – сортируются (в современных браузерах).
+    Если нужно, чтобы порядок перебора числовых ключей соответствовал их объявлению в объекте, то используют трюк:
+    числовые ключи заменяют на похожие, но содержащие не только цифры. Например, добавляют в начало +, как описано в примере
+    выше, а потом, в процессе обработки, преобразуют такие ключи в числа.
+</pre>
 
+<script>
+    /*function isEmpty(obj) { //Определяем пустой ли объект - мой способ
+        var counter = 0;
+        for (var key in obj) {
+            counter++;
+        }
+        return (counter>0)? false: true;
+    }
+
+    function isEmpty(obj) {
+        for (var key in obj) {
+            return false;
+        }
+        return true;
+    }
+
+    var schedule = {};
+
+    alert( isEmpty(schedule) ); // true
+
+    schedule["8:30"] = "подъём";
+
+    alert( isEmpty(schedule) ); // false
+
+
+    "use strict";
+
+    var salaries = {
+        "Вася": 100,
+        "Петя": 300,
+        "Даша": 250
+    };
+
+    //... ваш код выведет 650
+    var summ = 0;
+    for (var key in salaries) {
+        summ += salaries[key];
+    }
+    alert(summ);
+
+
+    "use strict";
+
+    var salaries = {
+        "Вася": 100,
+        "Петя": 300,
+        "Даша": 250
+    };
+
+    // ... ваш код выведет "Петя"
+    var max = 0,
+        user = "нет сотрудников";
+    
+    for (var name in salaries) {
+        if (max < salaries[name]) {
+            max = salaries[name];
+            user = name;
+        }
+    }
+    alert(user);
+    */
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n)
+    }
+
+    function multiplyNumeric(obj) {
+        for (var tag in obj) {
+            if (isNumeric(obj[tag])) {
+                obj[tag] *=2;
+            }
+        }
+    }
+
+    // до вызова
+    var menu = {
+        width: 200,
+        height: 300,
+        title: "My menu"
+    };
+
+    multiplyNumeric(menu);
+    alert("menu width=" + menu.width + '\nheight=' + menu.height + "\ntitle=" + menu.title );
+</script>
 </body>
 </html>

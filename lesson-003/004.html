@@ -5,6 +5,30 @@
     <title>Объекты как ассоциативные массивы</title>
 </head>
 <body>
+<pre>
+    Объекты – это ассоциативные массивы с дополнительными возможностями:
 
+    Доступ к элементам осуществляется:
+    Напрямую по ключу obj.prop = 5
+    Через переменную, в которой хранится ключ:
+
+    var key = "prop";
+    obj[key] = 5
+
+    Удаление ключей: delete obj.name.
+    Существование свойства может проверять оператор in: if ("prop" in obj), как правило, работает и просто сравнение if (obj.prop !== undefined).
+</pre>
+<script>
+    var user = {};
+    user.name = "Вася";
+    user.surname = "Петров";
+
+    alert(user.name);
+    user.name = "Сергей";
+    alert(user.name);
+
+    delete user.name;
+
+</script>
 </body>
 </html>
