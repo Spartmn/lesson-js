@@ -35,9 +35,21 @@ var elem = arr.shift() удаляет и возвращает первый эл�
 </pre>
 
 <script>
-    function last(obj) {
+    /*var goods = ["Яблоко", "Апельсин", "Слива", "Вишня", "Груша"];
+    goods.push("Компьютер"); // или goods[goods.length] = 'Компьютер';
+    alert(goods[goods.length-1]);*/
+    var styles = ["Джаз", "Блюз"];
+    alert(styles);
+    styles.push("Рок-н-Ролл");
+    alert(styles);
+    styles[styles.length-2] = "Классика";
+    alert(styles);
+    alert(styles.shift());
+    alert(styles);
+    styles.unshift("Рэп", "Регги");
+    alert(styles);
 
-    }
+
 </script>
 </body>
 </html>
