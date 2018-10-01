@@ -56,7 +56,7 @@ var elem = arr.shift() удаляет и возвращает первый эл�
     var min = 0; max = arr.length-1;
     var rand = Math.floor(Math.random() * arr.length); // Код для генерации случайного числа min + Math.floor(Math.random() * (max + 1 - min));
     alert(arr[rand]);
-    */
+
 
     // Создайте калькулятор для введенных значений
     var arrNum = [],
@@ -74,11 +74,60 @@ var elem = arr.shift() удаляет и возвращает первый эл�
             break;
         }
         sum += +Num;
-        arrNum.push(Num);
+        arrNum.push(+Num);
     }
 
     alert(arrNum);
     alert(sum);
+    */
+    /* // Альтернативный вариант Создайте калькулятор для введенных значений
+    var numbers = [];
+
+    while (true) {
+        var value = prompt("Введите число", 0);
+        if (value === "" || value === null || isNaN(value)) break;
+        numbers.push(+value);
+    }
+
+    var sum = 0;
+    for (var i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+
+    alert( sum );
+    */
+
+    //Поиск в массиве
+    /*function find(arr, value) {
+        var pos = -1;
+        for (var i = 0; i < arr.length; i++){
+            if (arr[i] === value) {
+                pos = i;
+            }
+        }
+        return pos;
+    }*/
+    // Альтернативный вариант поиска в массиве
+    function find(array, value) {
+        if (array.indexOf) { // если метод существует
+            return array.indexOf(value);
+        }
+
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === value) return i;
+        }
+
+        return -1;
+    }
+
+
+    arr = ["test", 2, 1.5, false];
+
+    alert(find(arr, "test")); // 0
+    alert(find(arr, 2)); // 1
+    alert(find(arr, 1.5)); // 2
+
+    alert(find(arr, 0)); // -1
 </script>
 </body>
 </html>
