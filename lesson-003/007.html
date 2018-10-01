@@ -35,10 +35,12 @@ var elem = arr.shift() удаляет и возвращает первый эл�
 </pre>
 
 <script>
-    /*var goods = ["Яблоко", "Апельсин", "Слива", "Вишня", "Груша"];
-    goods.push("Компьютер"); // или goods[goods.length] = 'Компьютер';
-    alert(goods[goods.length-1]);*/
-    var styles = ["Джаз", "Блюз"];
+    /*
+    var goods = ["Яблоко", "Апельсин", "Слива", "Вишня", "Груша"];
+    goods.push("Компьютер"); // или goods[goods.length] = 'Компьютер'; // Добавить новый элемент в массив
+    alert(goods[goods.length-1]); // Получить последний элемент массива
+
+    var styles = ["Джаз", "Блюз"]; //Создание массива
     alert(styles);
     styles.push("Рок-н-Ролл");
     alert(styles);
@@ -49,7 +51,34 @@ var elem = arr.shift() удаляет и возвращает первый эл�
     styles.unshift("Рэп", "Регги");
     alert(styles);
 
+    // Получить случайное значение из массива
+    var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+    var min = 0; max = arr.length-1;
+    var rand = Math.floor(Math.random() * arr.length); // Код для генерации случайного числа min + Math.floor(Math.random() * (max + 1 - min));
+    alert(arr[rand]);
+    */
 
+    // Создайте калькулятор для введенных значений
+    var arrNum = [],
+        NumTrue = true,
+        sum = 0;
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n)
+    }
+
+    while (NumTrue  != null){
+        var Num = prompt("Введите число", "");
+        if (!isNumeric(Num) || Num == null) {
+            alert("Не число");
+            break;
+        }
+        sum += +Num;
+        arrNum.push(Num);
+    }
+
+    alert(arrNum);
+    alert(sum);
 </script>
 </body>
 </html>
