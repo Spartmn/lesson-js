@@ -106,7 +106,7 @@ var elem = arr.shift() удаляет и возвращает первый эл�
             }
         }
         return pos;
-    }*/
+    }
     // Альтернативный вариант поиска в массиве
     function find(array, value) {
         if (array.indexOf) { // если метод существует
@@ -128,6 +128,43 @@ var elem = arr.shift() удаляет и возвращает первый эл�
     alert(find(arr, 1.5)); // 2
 
     alert(find(arr, 0)); // -1
+
+
+    // Фильтр диапазона
+    function filterRange(arr, a, b) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] >= a && arr[i] <= b) {
+                newArr.push(arr[i]);
+            }
+        }
+        return newArr;
+    }
+
+    var arr = [5, 4, 3, 8, 0];
+
+    var filtered = filterRange(arr, 3, 5);
+    // теперь filtered = [5, 4, 3]
+    // arr не изменился
+    alert(filtered);
+    */
+
+    var arr = [],
+    maxNum = prompt("Введите максимальное число", "100"),
+    p = 2;
+    for (var i=0; i < maxNum; i++) { //Формируем массив
+        arr[i] = i+1;
+    }
+    while (p*p < maxNum) {
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i] == p){
+                arr[i].delete();
+                p =+ p;
+            }
+        }
+    }
+
+
 </script>
 </body>
 </html>
