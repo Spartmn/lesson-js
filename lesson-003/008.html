@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Массивы: методы</title>
+</head>
+<body>
+<script>
+    var arr = [1, -2, 15, 2, 0, 8];
+    arr.sort(function(a, b) {
+        alert( a + " <> " + b );
+    });
+
+    function compareNumeric(a, b) { //Функция сортировки чисел
+        return a - b;
+    }
+    alert(arr.sort(compareNumeric));
+</script>
+</body>
+</html>
